@@ -1,0 +1,10 @@
+.banner { background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);border-radius:var(--radius-lg);padding:44px 48px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;box-shadow:0 8px 32px rgba(15,36,97,0.22);position:relative;overflow:hidden; }
+.banner::before { content:'';position:absolute;top:-60px;right:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,0.04);pointer-events:none; }
+.title  { font-family:var(--font-head);font-size:1.65rem;font-weight:800;margin-bottom:8px;color:#fff; }
+.sub    { color:rgba(255,255,255,0.65);font-size:0.9rem;line-height:1.5;max-width:420px; }
+.actions { display:flex;gap:12px;flex-shrink:0;position:relative;z-index:1; }
+.btnWhite   { background:#fff;color:var(--navy);font-family:var(--font-body);font-size:0.875rem;font-weight:700;padding:11px 26px;border:none;border-radius:var(--radius);cursor:pointer;display:flex;align-items:center;gap:8px;transition:all 0.18s;box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+.btnWhite:hover  { transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.2); }
+.btnOutline { background:transparent;color:#fff;font-family:var(--font-body);font-size:0.875rem;font-weight:600;padding:10px 26px;border:1.5px solid rgba(255,255,255,0.4);border-radius:var(--radius);cursor:pointer;display:flex;align-items:center;gap:8px;transition:all 0.18s; }
+.btnOutline:hover { background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.7); }
+@media (max-width:600px) { .banner{flex-direction:column;padding:32px 24px;} .actions{flex-direction:column;width:100%;} }

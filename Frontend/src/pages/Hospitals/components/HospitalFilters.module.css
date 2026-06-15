@@ -1,0 +1,4 @@
+.wrap { display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;align-items:center; }
+.btn  { padding:9px 18px;border-radius:var(--radius);border:1.5px solid var(--border);background:var(--panel);color:var(--text2);font-family:var(--font-body);font-weight:500;font-size:0.845rem;cursor:pointer;transition:all 0.18s;box-shadow:var(--shadow-sm); }
+.btn:hover { border-color:var(--accent);color:var(--accent);background:#eff6ff; }
+.active    { background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:0 2px 8px rgba(15,36,97,0.2); }

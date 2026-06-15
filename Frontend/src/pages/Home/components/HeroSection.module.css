@@ -1,0 +1,43 @@
+.hero {
+  text-align: center; padding: 72px 0 48px; position: relative;
+}
+.heroAccentBar {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 1px; height: 72px; background: linear-gradient(to bottom, transparent, var(--accent));
+  opacity: 0.4;
+}
+.tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600;
+  color: var(--accent); letter-spacing: 2px; text-transform: uppercase;
+  background: #eff6ff; border: 1px solid #bfdbfe;
+  padding: 5px 14px; border-radius: 20px; margin-bottom: 22px;
+}
+.tagDot { width:7px; height:7px; border-radius:50%; background:var(--accent); animation:pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;}50%{opacity:0.35;} }
+
+.heading {
+  font-family: var(--font-head); font-size: 3.4rem; font-weight: 800;
+  line-height: 1.1; letter-spacing: -1px; color: var(--text);
+  margin-bottom: 8px;
+}
+.heading .line2 { color: var(--accent); }
+
+.sub {
+  color: var(--text2); font-size: 1.05rem; max-width: 520px;
+  margin: 18px auto 38px; line-height: 1.7;
+}
+
+.actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.trustRow {
+  display: flex; align-items: center; justify-content: center; gap: 28px;
+  margin-top: 48px; flex-wrap: wrap;
+}
+.trustItem {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.82rem; color: var(--text3); font-weight: 500;
+}
+.trustIcon { color: var(--accent3); }
+
+@media (max-width:640px) { .heading { font-size:2.1rem; } }

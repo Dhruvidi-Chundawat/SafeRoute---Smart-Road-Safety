@@ -1,0 +1,23 @@
+.page { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:40px 1.5rem; background:linear-gradient(135deg,#f7f8fc 0%,#eff4ff 100%); }
+.card { width:100%; max-width:430px; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-lg); padding:36px 32px; box-shadow:var(--shadow-lg); }
+.logoWrap { text-align:center; margin-bottom:30px; }
+.logoIcon { width:68px; height:68px; border-radius:16px; background:linear-gradient(135deg,var(--navy),var(--accent)); display:flex; align-items:center; justify-content:center; margin:0 auto 14px; box-shadow:0 6px 20px rgba(15,36,97,0.2); }
+.logoText { font-family:var(--font-head); font-size:1.8rem; font-weight:800; letter-spacing:-0.5px; color:var(--navy); }
+.logoSub { color:var(--text3); font-size:0.82rem; margin-top:4px; }
+.tabs { display:flex; border-bottom:1px solid var(--border); margin-bottom:26px; }
+.tab { flex:1; background:none; border:none; border-bottom:2.5px solid transparent; color:var(--text3); font-family:var(--font-body); font-weight:600; font-size:0.875rem; padding:0 0 12px; margin-bottom:-1px; cursor:pointer; transition:all 0.18s; }
+.tab:hover { color:var(--text2); }
+.tabActive { color:var(--accent); border-bottom-color:var(--accent); }
+.passWrap { position:relative; }
+.eyeBtn { position:absolute; right:12px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; display:flex; align-items:center; padding:4px; }
+.forgotRow { text-align:right; margin:-10px 0 18px; }
+.forgotLink { font-size:0.8rem; color:var(--accent); font-weight:500; }
+.forgotLink:hover { text-decoration:underline; }
+.switchRow { text-align:center; font-size:0.82rem; color:var(--text3); margin-top:20px; }
+.switchBtn { background:none; border:none; color:var(--accent); font-weight:600; font-size:0.82rem; cursor:pointer; font-family:var(--font-body); }
+.switchBtn:hover { text-decoration:underline; }
+.backRow { text-align:center; margin-top:14px; }
+.backBtn { background:none; border:none; color:var(--text3); font-size:0.8rem; cursor:pointer; font-family:var(--font-body); transition:color 0.18s; }
+.backBtn:hover { color:var(--text2); }
+.footer { font-size:0.74rem; color:var(--text3); margin-top:20px; }
+@media (max-width:480px) { .card{padding:28px 18px;} }

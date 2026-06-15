@@ -1,0 +1,27 @@
+/* Numbers */
+.numbersGrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:12px; margin-bottom:40px; }
+.numberCard {
+  background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-lg);
+  padding:18px 14px; text-align:center; text-decoration:none;
+  cursor:pointer; transition:all 0.18s; display:block; box-shadow:var(--shadow-sm);
+}
+.numberCard:hover { box-shadow:var(--shadow); transform:translateY(-2px); }
+.numberValue { font-family:var(--font-head); font-size:1.7rem; font-weight:800; }
+.numberName  { font-size:0.82rem; font-weight:600; color:var(--text); margin-top:5px; }
+.numberType  { font-size:0.72rem; color:var(--text3); margin-top:3px; }
+
+/* Form */
+.formHeader { display:flex; align-items:center; gap:10px; margin-bottom:22px; padding-bottom:16px; border-bottom:1px solid var(--border); }
+.formTitle  { font-family:var(--font-head); font-size:1.1rem; font-weight:700; color:var(--text); }
+.formActions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:4px; }
+
+/* Preview */
+.previewLabel { font-family:var(--font-mono); font-size:0.68rem; color:var(--text3); letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; font-weight:600; }
+.previewText  { font-family:var(--font-mono); font-size:0.8rem; color:#065f46; background:#f0fdf4; padding:16px; border-radius:var(--radius); white-space:pre-wrap; line-height:1.7; border:1px solid #bbf7d0; }
+.previewEmpty { color:var(--text3); font-size:0.875rem; padding:28px; text-align:center; border:1.5px dashed var(--border); border-radius:var(--radius); background:var(--bg3); }
+
+/* Causes */
+.cpHeader { font-family:var(--font-head); font-size:0.92rem; font-weight:700; color:var(--text); margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+.cpRow    { padding:10px 0; }
+.cpCause  { color:var(--danger); font-size:0.82rem; font-weight:600; margin-bottom:3px; }
+.cpAction { color:var(--success); font-size:0.8rem; }

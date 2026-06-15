@@ -1,0 +1,25 @@
+
+.actions{
+    margin-top:20px;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.text{
+    white-space:pre-wrap;
+    line-height:1.7;
+    color:var(--text2);
+}
+
+.label{
+    font-family:var(--font-head);
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:20px;
+}
+
+.empty{
+    color:var(--text3);
+}
+

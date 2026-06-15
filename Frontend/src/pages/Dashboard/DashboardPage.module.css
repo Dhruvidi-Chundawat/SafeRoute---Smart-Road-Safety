@@ -1,0 +1,9 @@
+.page { padding:80px 2rem 60px; min-height:100vh; }
+.container { max-width:1200px; margin:0 auto; }
+.header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; margin-bottom:4px; }
+.subtext { color:var(--text2); font-size:0.875rem; margin-top:-16px; margin-bottom:24px; }
+.liveWrap { display:flex; flex-direction:column; align-items:flex-end; gap:6px; padding-top:8px; }
+.timestamp { font-family:var(--font-mono); font-size:0.7rem; color:var(--text3); }
+.chartsRow { display:grid; grid-template-columns:2fr 1fr; gap:18px; margin-bottom:18px; }
+.bottomRow { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+@media (max-width:900px) { .chartsRow,.bottomRow{grid-template-columns:1fr;} .page{padding:80px 1rem 40px;} }

@@ -1,0 +1,9 @@
+.title  { font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:16px; }
+.table  { width:100%;border-collapse:collapse; }
+.table th { font-family:var(--font-mono);font-size:0.64rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);font-weight:600; }
+.table td { padding:12px 14px;border-bottom:1px solid var(--bg4);font-size:0.875rem;color:var(--text2); }
+.table tr:hover td { background:var(--bg3);color:var(--text); }
+.table tr:last-child td { border-bottom:none; }
+.zone   { color:var(--text);font-size:0.845rem;font-weight:500; }
+.count  { font-family:var(--font-mono);color:var(--navy);font-weight:600; }
+.change { font-family:var(--font-mono);font-size:0.8rem;font-weight:600; }

@@ -1,0 +1,6 @@
+.grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-bottom:40px; }
+.card { background:var(--panel);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 14px;text-align:center;text-decoration:none;cursor:pointer;transition:all 0.18s;display:block;box-shadow:var(--shadow-sm); }
+.card:hover { box-shadow:var(--shadow);transform:translateY(-2px); }
+.number { font-family:var(--font-head);font-size:1.7rem;font-weight:800; }
+.name   { font-size:0.82rem;font-weight:600;color:var(--text);margin-top:5px; }
+.type   { font-size:0.72rem;color:var(--text3);margin-top:3px; }

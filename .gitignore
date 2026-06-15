@@ -1,0 +1,33 @@
+node_modules/
+__pycache__/
+venv/
+.env
+dist/
+build/
+*.pyc
+
+frontend/node_modules/
+backend/venv/
+
+.DS_Store
+Thumbs.db
+
+# Python
+Backend/venv/
+__pycache__/
+*.pyc
+
+# React
+Frontend/node_modules/
+Frontend/build/
+
+# ML Models
+*.pkl
+*.joblib
+*.h5
+
+# Environment files
+.env
+
+# Cache
+.cache/

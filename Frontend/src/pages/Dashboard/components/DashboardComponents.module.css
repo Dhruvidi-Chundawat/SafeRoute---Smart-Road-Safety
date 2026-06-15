@@ -1,0 +1,41 @@
+.kpiRow { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:22px; }
+
+.chartHeader { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px; flex-wrap:wrap; gap:10px; }
+.chartTitle { font-family:var(--font-head); font-size:1rem; font-weight:700; color:var(--text); }
+.chartSub   { font-size:0.78rem; color:var(--text3); margin-top:3px; }
+.legend { display:flex; gap:14px; font-size:0.75rem; color:var(--text2); align-items:center; flex-wrap:wrap; }
+.legendItem { display:flex; align-items:center; gap:6px; }
+.dot { display:inline-block; width:12px; height:4px; border-radius:2px; }
+
+.barChart { display:flex; align-items:flex-end; gap:5px; height:160px; }
+.barCol   { flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; }
+.barPair  { display:flex; gap:2px; align-items:flex-end; width:100%; height:140px; }
+.bar      { flex:1; border-radius:3px 3px 0 0; min-height:4px; transition:opacity 0.2s; cursor:pointer; }
+.bar:hover { opacity:1 !important; filter:brightness(1.1); }
+.barLabel { font-family:var(--font-mono); font-size:0.56rem; color:var(--text4); }
+
+.causes { display:flex; flex-direction:column; gap:13px; }
+.causeRow {}
+.causeTop { display:flex; justify-content:space-between; margin-bottom:5px; }
+.causeLabel { font-size:0.84rem; color:var(--text2); font-weight:500; }
+.causePct   { font-family:var(--font-mono); font-size:0.8rem; font-weight:600; }
+
+.table { width:100%; border-collapse:collapse; }
+.table th { font-family:var(--font-mono); font-size:0.64rem; letter-spacing:1.5px; text-transform:uppercase; color:var(--text3); padding:10px 14px; text-align:left; border-bottom:1px solid var(--border); font-weight:600; }
+.table td { padding:12px 14px; border-bottom:1px solid var(--bg4); font-size:0.875rem; color:var(--text2); }
+.table tr:hover td { background:var(--bg3); color:var(--text); }
+.table tr:last-child td { border-bottom:none; }
+.tdZone  { color:var(--text); font-size:0.845rem; font-weight:500; }
+.tdCount { font-family:var(--font-mono); color:var(--navy); font-weight:600; }
+.tdChange{ font-family:var(--font-mono); font-size:0.8rem; font-weight:600; }
+
+.tableauBox {
+  background:var(--bg3); border:1.5px dashed var(--border); border-radius:var(--radius-lg);
+  height:200px; display:flex; align-items:center; justify-content:center;
+}
+.tableauInner { display:flex; flex-direction:column; align-items:center; gap:8px; }
+.tableauLabel { font-family:var(--font-head); font-size:1rem; font-weight:600; color:var(--text2); }
+.tableauSub   { font-family:var(--font-mono); font-size:0.7rem; color:var(--text3); }
+.tableauCode  { font-family:var(--font-mono); font-size:0.7rem; color:var(--accent); background:var(--bg4); padding:5px 12px; border-radius:6px; margin-top:4px; }
+
+@media (max-width:900px) { .kpiRow{grid-template-columns:repeat(2,1fr);} }

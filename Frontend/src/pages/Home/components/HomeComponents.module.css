@@ -1,0 +1,65 @@
+/* ─── Tips Grid ─── */
+.tipsGrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:20px; margin-bottom:56px; }
+.tipHeader { display:flex; align-items:center; gap:13px; margin-bottom:12px; }
+.tipIcon {
+  width:44px; height:44px; border-radius:12px;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.tipTitle { font-family:var(--font-head); font-size:1.0rem; font-weight:700; color:var(--text); }
+.tipDesc { color:var(--text2); font-size:0.875rem; line-height:1.65; }
+
+/* ─── Ticker ─── */
+.ticker {
+  background:#fff5f5; border:1px solid #fecaca; border-radius:var(--radius);
+  padding:11px 20px; display:flex; align-items:center; gap:14px; margin-bottom:48px;
+  box-shadow:var(--shadow-sm);
+}
+.liveTag {
+  display:inline-flex; align-items:center; gap:5px;
+  font-family:var(--font-mono); font-size:0.65rem; font-weight:700;
+  letter-spacing:1px; text-transform:uppercase; padding:3px 10px;
+  border-radius:4px; background:#fee2e2; color:var(--danger);
+  border:1px solid #fecaca; flex-shrink:0;
+}
+.tickerText { font-family:var(--font-mono); font-size:0.8rem; color:#7f1d1d; font-weight:500; }
+
+/* ─── CTA Banner ─── */
+.ctaBanner {
+  background:linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+  border-radius:var(--radius-lg); padding:44px 48px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:28px; flex-wrap:wrap; box-shadow:0 8px 32px rgba(15,36,97,0.22);
+  position:relative; overflow:hidden;
+}
+.ctaBanner::before {
+  content:''; position:absolute; top:-60px; right:-60px;
+  width:240px; height:240px; border-radius:50%;
+  background:rgba(255,255,255,0.04); pointer-events:none;
+}
+.ctaBanner::after {
+  content:''; position:absolute; bottom:-80px; right:80px;
+  width:200px; height:200px; border-radius:50%;
+  background:rgba(255,255,255,0.03); pointer-events:none;
+}
+.ctaTitle { font-family:var(--font-head); font-size:1.65rem; font-weight:800; margin-bottom:8px; color:#fff; }
+.ctaSub { color:rgba(255,255,255,0.65); font-size:0.9rem; line-height:1.5; max-width:420px; }
+.ctaActions { display:flex; gap:12px; flex-shrink:0; position:relative; z-index:1; }
+.ctaBtnWhite {
+  background:#fff; color:var(--navy); font-family:var(--font-body); font-size:0.875rem; font-weight:700;
+  padding:11px 26px; border:none; border-radius:var(--radius); cursor:pointer;
+  display:flex; align-items:center; gap:8px; transition:all 0.18s;
+  box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+.ctaBtnWhite:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,0.2); }
+.ctaBtnOutline {
+  background:transparent; color:#fff; font-family:var(--font-body); font-size:0.875rem; font-weight:600;
+  padding:10px 26px; border:1.5px solid rgba(255,255,255,0.4); border-radius:var(--radius); cursor:pointer;
+  display:flex; align-items:center; gap:8px; transition:all 0.18s;
+}
+.ctaBtnOutline:hover { background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.7); }
+
+@media (max-width:600px) {
+  .tipsGrid { grid-template-columns:1fr; }
+  .ctaBanner { flex-direction:column; padding:32px 24px; }
+  .ctaActions { flex-direction:column; width:100%; }
+}

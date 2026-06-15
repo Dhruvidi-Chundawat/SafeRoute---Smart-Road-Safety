@@ -1,0 +1,5 @@
+.page { padding:80px 2rem 60px; min-height:100vh; }
+.container { max-width:1000px; margin:0 auto; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:start; }
+.rightCol { display:flex; flex-direction:column; gap:14px; }
+@media (max-width:780px) { .grid{grid-template-columns:1fr;} .page{padding:80px 1rem 40px;} }
