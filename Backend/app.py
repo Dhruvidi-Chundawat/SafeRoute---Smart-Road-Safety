@@ -8,7 +8,13 @@ import pandas as pd
 app = Flask(__name__)
 CORS(app)
 bcrypt = Bcrypt(app)
-model = joblib.load("accident_model.pkl")
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model_path = os.path.join(BASE_DIR, "accident_model.pkl")
+
+model = joblib.load(model_path)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
