@@ -6,7 +6,17 @@ import joblib
 import pandas as pd
 
 app = Flask(__name__)
-CORS(app)
+CORS(
+    app,
+    resources={
+        r"/*": {
+            "origins": [
+                "https://safe-route-smart-road-safety.vercel.app",
+                "http://localhost:3000"
+            ]
+        }
+    }
+)
 bcrypt = Bcrypt(app)
 import os
 
