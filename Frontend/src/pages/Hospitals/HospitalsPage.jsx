@@ -28,15 +28,40 @@ export default function HospitalsPage() {
 
       const data = await response.json();
 
-      const hospitalData = (data.features || []).map((h) => ({
-        name: h.properties.name || "Unnamed Hospital",
-        address: h.properties.formatted || "Address unavailable",
-        phone: h.properties.phone || "",
-        type: "hospital",
-        emergency: true,
-        rating: "N/A",
-        dist: "Nearby"
-      }));
+      const hospitalData = (data.features || []).map((h) => {
+
+        const hospitalName = (h.properties.name || "").toLowerCase();
+
+        let type = "private";
+
+        if (
+          hospitalName.includes("government") ||
+          hospitalName.includes("govt") ||
+          hospitalName.includes("district hospital") ||
+          hospitalName.includes("civil hospital") ||
+          hospitalName.includes("aiims")
+        ) {
+          type = "government";
+        }
+
+        if (
+          hospitalName.includes("trauma") ||
+          hospitalName.includes("emergency") ||
+          hospitalName.includes("trauma center")
+        ) {
+          type = "trauma";
+        }
+
+        return {
+          name: h.properties.name || "Unnamed Hospital",
+          address: h.properties.formatted || "Address unavailable",
+          phone: h.properties.phone || "",
+          type: type,
+          emergency: true,
+          rating: h.properties.rating || "N/A",
+          dist: "Nearby"
+        };
+      });
 
       setHospitals(hospitalData);
 
@@ -48,11 +73,11 @@ export default function HospitalsPage() {
 
 }, []);
 
-  const filtered = hospitals.filter(
-    (h) =>
-      (filter === 'all' || h.type === filter) &&
-      h.name.toLowerCase().includes(search.toLowerCase())
-  );
+const filtered = hospitals.filter(
+  (h) =>
+    (filter === "all" || h.type === filter) &&
+    h.name.toLowerCase().includes(search.toLowerCase())
+);
 
   return (
     <div className={`${styles.page} page-enter`}>
