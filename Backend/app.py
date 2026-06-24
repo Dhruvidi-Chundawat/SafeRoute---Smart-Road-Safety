@@ -135,6 +135,27 @@ def get_news():
 
     return jsonify(response.json())
 
+@app.route("/hospitals", methods=["GET"])
+def get_hospitals():
+
+    lat = request.args.get("lat")
+    lon = request.args.get("lon")
+
+    query = f"""
+    [out:json];
+    (
+      node["amenity"="hospital"](around:10000,{lat},{lon});
+    );
+    out;
+    """
+
+    response = requests.post(
+        "https://overpass-api.de/api/interpreter",
+        data=query
+    )
+
+    return jsonify(response.json())    
+
 
 
 if __name__ == "__main__":
