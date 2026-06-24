@@ -135,30 +135,30 @@ def get_news():
 
     return jsonify(response.json())
 
-
-
 @app.route("/hospitals", methods=["GET"])
 def get_hospitals():
 
     lat = request.args.get("lat")
     lon = request.args.get("lon")
 
-    query = f"""
-    [out:json];
-    (
-      node["amenity"="hospital"](around:10000,{lat},{lon});
-    );
-    out;
-    """
+    url = "https://nominatim.openstreetmap.org/search"
 
-    response = requests.post(
-        "https://overpass-api.de/api/interpreter",
-        data=query
-    )
+    params = {
+        "q": "hospital",
+        "format": "json",
+        "limit": 10,
+        "addressdetails": 1,
+        "viewbox": f"{float(lon)-0.1},{float(lat)+0.1},{float(lon)+0.1},{float(lat)-0.1}",
+        "bounded": 1
+    }
 
-    print(response.text)
+    headers = {
+        "User-Agent": "SafeRoute/1.0"
+    }
 
-    return response.text
+    response = requests.get(url, params=params, headers=headers)
+
+    return jsonify(response.json())
 
 
 
