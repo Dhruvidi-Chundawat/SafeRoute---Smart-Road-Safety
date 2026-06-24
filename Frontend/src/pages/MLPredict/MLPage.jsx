@@ -22,7 +22,7 @@ const handlePredict = async (formData) => {
   try {
 
     const response = await axios.post(
-      "https://saferoute-backend-x5b6.onrender.com",
+      "https://saferoute-backend-x5b6.onrender.com/predict",
       formData
     );
 

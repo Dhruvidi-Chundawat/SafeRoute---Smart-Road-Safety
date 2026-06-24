@@ -4,6 +4,7 @@ from models.user import db, User
 from flask_cors import CORS
 import joblib
 import pandas as pd
+import requests
 
 app = Flask(__name__)
 CORS(
@@ -116,6 +117,25 @@ def predict():
     return jsonify({
         "prediction": risk
     })
+
+
+@app.route("/news", methods=["GET"])
+def get_news():
+
+    url = "https://gnews.io/api/v4/search?q=road accident India&lang=en&max=5&apikey=3b1faa5d51a5fd0857cc1b88244d5cc4"
+
+    params = {
+        "q": "road accident India",
+        "lang": "en",
+        "max": 5,
+        "apikey": "YOUR_GNEWS_API_KEY"
+    }
+
+    response = requests.get(url, params=params)
+
+    return jsonify(response.json())
+
+
 
 
 if __name__ == "__main__":

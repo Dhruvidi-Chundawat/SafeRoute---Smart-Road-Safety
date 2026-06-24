@@ -10,10 +10,10 @@ export default function LiveNews() {
 
     axios
       .get(
-        "https://gnews.io/api/v4/search?q=road accident India&lang=en&max=5&apikey=3b1faa5d51a5fd0857cc1b88244d5cc4"
+        "https://saferoute-backend-x5b6.onrender.com/news"
       )
       .then((res) => {
-        setNews(res.data.articles);
+        setNews(res.data.articles || []);
       })
       .catch((err) => console.log(err));
 
