@@ -138,6 +138,8 @@ def get_news():
     return jsonify(response.json())
 
 
+import os
+import requests
 
 @app.route("/hospitals", methods=["GET"])
 def get_hospitals():
@@ -145,20 +147,19 @@ def get_hospitals():
     lat = request.args.get("lat")
     lon = request.args.get("lon")
 
-    api_key = os.getenv("Google_maps_API")
+    api_key = os.getenv("Geoapify")
 
     url = (
-        "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
-        f"?location={lat},{lon}"
-        "&radius=10000"
-        "&type=hospital"
-        f"&key={api_key}"
+        f"https://api.geoapify.com/v2/places"
+        f"?categories=healthcare.hospital"
+        f"&filter=circle:{lon},{lat},10000"
+        f"&limit=20"
+        f"&apiKey={api_key}"
     )
 
     response = requests.get(url)
 
     return jsonify(response.json())
-
 
 
 if __name__ == "__main__":
