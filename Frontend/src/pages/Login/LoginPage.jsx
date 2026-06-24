@@ -27,7 +27,7 @@ export default function LoginPage() {
     if (tab === "login") {
 
       const response = await axios.post(
-        "http://127.0.0.1:5000/login",
+        "https://saferoute-backend-x5b6.onrender.com/login",
         {
           email: form.email,
           password: form.password,
@@ -51,7 +51,7 @@ navigate("/", { replace: true });
       }
 
       const response = await axios.post(
-        "http://127.0.0.1:5000/register",
+        "https://saferoute-backend-x5b6.onrender.com",
         {
           name: form.name,
           email: form.email,

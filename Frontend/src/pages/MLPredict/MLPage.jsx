@@ -22,7 +22,7 @@ const handlePredict = async (formData) => {
   try {
 
     const response = await axios.post(
-      "http://127.0.0.1:5000/predict",
+      "https://saferoute-backend-x5b6.onrender.com",
       formData
     );
 
