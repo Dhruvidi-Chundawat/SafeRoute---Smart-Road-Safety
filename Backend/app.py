@@ -5,6 +5,8 @@ from flask_cors import CORS
 import joblib
 import pandas as pd
 import requests
+import os
+
 
 app = Flask(__name__)
 CORS(
@@ -135,37 +137,27 @@ def get_news():
 
     return jsonify(response.json())
 
+
+
 @app.route("/hospitals", methods=["GET"])
 def get_hospitals():
 
     lat = request.args.get("lat")
     lon = request.args.get("lon")
 
-    url = "https://nominatim.openstreetmap.org/search"
+    api_key = os.getenv("Google_maps_API")
 
-    params = {
-        "q": "hospital",
-        "format": "json",
-        "limit": 10,
-        "addressdetails": 1,
-        "viewbox": f"{float(lon)-0.1},{float(lat)+0.1},{float(lon)+0.1},{float(lat)-0.1}",
-        "bounded": 1
-    }
-
-    headers = {
-        "User-Agent": "SafeRoute/1.0"
-    }
-
-    response = requests.get(
-        url,
-        params=params,
-        headers=headers
+    url = (
+        "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+        f"?location={lat},{lon}"
+        "&radius=10000"
+        "&type=hospital"
+        f"&key={api_key}"
     )
 
-    print("STATUS:", response.status_code)
-    print(response.text[:1000])
+    response = requests.get(url)
 
-    return response.text
+    return jsonify(response.json())
 
 
 
