@@ -122,19 +122,18 @@ def predict():
 @app.route("/news", methods=["GET"])
 def get_news():
 
-    url = "https://gnews.io/api/v4/search?q=road accident India&lang=en&max=5&apikey=3b1faa5d51a5fd0857cc1b88244d5cc4"
+    url = "https://gnews.io/api/v4/search"
 
     params = {
         "q": "road accident India",
         "lang": "en",
         "max": 5,
-        "apikey": "YOUR_GNEWS_API_KEY"
+        "apikey": "3b1faa5d51a5fd0857cc1b88244d5cc4"
     }
 
     response = requests.get(url, params=params)
 
     return jsonify(response.json())
-
 
 
 
