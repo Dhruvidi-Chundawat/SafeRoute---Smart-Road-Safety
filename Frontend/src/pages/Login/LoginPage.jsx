@@ -51,7 +51,7 @@ navigate("/", { replace: true });
       }
 
       const response = await axios.post(
-        "https://saferoute-backend-x5b6.onrender.com",
+        "https://saferoute-backend-x5b6.onrender.com/register",
         {
           name: form.name,
           email: form.email,
