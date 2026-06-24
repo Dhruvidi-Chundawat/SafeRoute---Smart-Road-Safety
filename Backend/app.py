@@ -156,11 +156,16 @@ def get_hospitals():
         "User-Agent": "SafeRoute/1.0"
     }
 
-    response = requests.get(url, params=params, headers=headers)
+    response = requests.get(
+        url,
+        params=params,
+        headers=headers
+    )
 
-    return jsonify(response.json())
+    print("STATUS:", response.status_code)
+    print(response.text[:1000])
 
-
+    return response.text
 
 
 
