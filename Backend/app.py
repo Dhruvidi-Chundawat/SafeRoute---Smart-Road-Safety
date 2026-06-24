@@ -135,6 +135,8 @@ def get_news():
 
     return jsonify(response.json())
 
+
+
 @app.route("/hospitals", methods=["GET"])
 def get_hospitals():
 
@@ -154,7 +156,11 @@ def get_hospitals():
         data=query
     )
 
-    return jsonify(response.json())    
+    print(response.text)
+
+    return response.text
+
+
 
 
 
