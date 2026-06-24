@@ -17,38 +17,32 @@ export default function HospitalsPage() {
 
   navigator.geolocation.getCurrentPosition(async (position) => {
 
-    const lat = position.coords.latitude;
-    const lon = position.coords.longitude;
+    try {
 
-    const query = `
-    [out:json];
-    (
-      node["amenity"="hospital"](around:10000,${lat},${lon});
-    );
-    out;
-    `;
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
 
-    const response = await fetch(
-      "https://overpass-api.de/api/interpreter",
-      {
-        method: "POST",
-        body: query
-      }
-    );
+      const response = await fetch(
+        `https://saferoute-backend-x5b6.onrender.com/hospitals?lat=${lat}&lon=${lon}`
+      );
 
-    const data = await response.json();
+      const data = await response.json();
 
-    const hospitalData = data.elements.map((h) => ({
-      name: h.tags.name || "Unnamed Hospital",
-      address: h.tags["addr:full"] || "Address unavailable",
-      phone: h.tags.phone || "",
-      type: "hospital",
-      emergency: true,
-      rating: "N/A",
-      dist: "Nearby"
-    }));
+      const hospitalData = (data.features || []).map((h) => ({
+        name: h.properties.name || "Unnamed Hospital",
+        address: h.properties.formatted || "Address unavailable",
+        phone: h.properties.phone || "",
+        type: "hospital",
+        emergency: true,
+        rating: "N/A",
+        dist: "Nearby"
+      }));
 
-    setHospitals(hospitalData);
+      setHospitals(hospitalData);
+
+    } catch (error) {
+      console.error("Hospital fetch error:", error);
+    }
 
   });
 
